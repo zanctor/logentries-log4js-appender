@@ -17,7 +17,7 @@ exports.configure = (config, layouts) => {
         logger = new Logger({token: options.token});
     } else {
         console.error('ERROR: logentries appender expected token but did not get one'); // todo: how to properly propagate? throwing exception does not work nicely.
-        return null;
+        return exports.dummyAppender();
     }
 
     var layout;
@@ -61,6 +61,12 @@ exports.appender = (config, layout) => {
         if (event.level === levels.TRACE) {
             logger.notice(msg);
         }
+    };
+};
+
+exports.dummyAppender = () => {
+    return function (event) {
+        // Ignore event
     };
 };
 
