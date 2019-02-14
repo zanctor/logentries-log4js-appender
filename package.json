@@ -8,13 +8,15 @@
   },
   "scripts": {
     "test": "npm run lint && ./node_modules/mocha/bin/mocha",
-
     "lint": "./node_modules/xo/cli.js"
   },
-  "xo" : {
-     "space" : 4,
-    "globals" : [ "describe", "it", "beforeEach" ]
-
+  "xo": {
+    "space": 4,
+    "globals": [
+      "describe",
+      "it",
+      "beforeEach"
+    ]
   },
   "main": "src/logentries.js",
   "dependencies": {
